@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block start %}
+<div class="main home-page">
+    <section id="main-carousel" class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="{% load static %}{% static 'banners/slide3.png' %}" alt="banner" />
+        </div>
+        <div class="item">
+            <img src="{% load static %}{% static 'banners/slide2.png' %}" alt="banner" />
+        </div>
+        <div class="item">
+            <img src="{% load static %}{% static 'banners/slide1.png' %}" alt="banner" />
+        </div>
+    </section>
+    
+
+    <!-- Custom arrow buttons -->
+    <div class="custom-arrows">
+        <button class="arrow-prev" data-owl-direction="prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="arrow-next" data-owl-direction="next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

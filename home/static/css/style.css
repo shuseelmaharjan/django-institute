@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rubik:wght@400;500&display=swap');
+
+:root {
+    --white: #fff;
+    --primary: #edeee4;
+    --offwhite: #f8f8f8;
+    --secondary: #0f9e33;
+    --green:#008000;
+    --yellow:#ec971f;
+    --yellowhover: #f0ad4e;
+    --nav-primary: #026363;
+    --nav-secondary: #7b0070;
+    --primary-font: 'Inter', sans-serif;
+    --secondary-font: 'Rubik', sans-serif;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    display: block;
+}
+
+nav #topbar-nav {
+    text-align: center;
+    padding: 10px 50px;
+    background: var(--offwhite);
+}
+
+nav #navs {
+    font-family: var(--primary-font);
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--nav-primary);
+}
+
+nav .navbar {
+    padding: 0px 100px 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    margin-left: 100px;
+}
+
+nav .logo img {
+    width: 200px;
+}
+
+.flag img {
+    width: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+.centered-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+
+.centered-list .nav-btns {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px 50px;
+}
+
+.centered-list .nav-btns li a {
+    margin: 0px 10px;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--primary-font);
+    padding: 7px 10px;
+    border-radius: 10px;
+}
+
+.nav-btns .apply {
+    background: var(--yellow);
+}
+
+.nav-btns .login {
+    background: var(--green);
+}
+.nav-btns .apply:hover{
+    background: var(--yellowhover);
+}
+.nav-btns .login:hover{
+    background: var(--secondary);
+}
+
+#navs ul li {
+    height: 40px; 
+    display: inline-block; 
+}
+
+#navs ul li a {
+    display: block; 
+    height: 100%; 
+    padding: 10px 15px;
+}
+
+
+#navs ul li.active a {
+    background-color: var(--yellow);
+}
+
+#navs ul li a:hover {
+    background-color: var(--yellowhover);
+    color: var(--white);
+}
+
+.carousel-inner img {
+    width: 100%;
+}
+.custom-arrows {
+    position: absolute;
+    top: 50%;
+    width: calc(100% - 40px); /* Adjust the width by subtracting twice the padding */
+    max-width: 100%;
+    display: flex;
+    z-index: 10;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.custom-arrows button {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000; 
+}
+
+.main .owl-carousel .item {
+    width: 100%;
+}
+
+.main .owl-carousel .owl-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Default styles for larger screens */
+.navbar {
+    padding: 0px 100px 0px 50px;
+}
+
+/* Adjust styles for medium-sized screens */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 0px 50px 0px 25px;
+    }
+}
+
+/* Adjust styles for small screens */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0px 25px;
+    }
+
+    .logo img {
+        width: 150px; /* Adjust the logo size for smaller screens */
+    }
+
+    .nav-btns {
+        margin: 0; /* Remove margin for smaller screens */
+    }
+
+    .nav-btns li a {
+        margin: 0px 5px; /* Adjust spacing for smaller screens */
+        font-size: 0.9rem; /* Adjust font size for smaller screens */
+    }
+}
+
+/* Responsive styles for the carousel */
+.owl-carousel .owl-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.custom-arrows {
+    padding: 0 10px; /* Adjust padding for smaller screens */
+}
+
+.custom-arrows button {
+    font-size: 20px; /* Adjust font size for smaller screens */
+}

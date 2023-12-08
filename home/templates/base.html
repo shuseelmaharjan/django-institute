@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page }}</title>
+
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+    <!--fontawesome cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    {% if page == 'Home' %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% else %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    {% endif %}
+</head>
+<body>
+    <nav>
+        <div class="navbar" id="topbar-nav">
+            <div class="logo"><a href="{% url 'home' %}"><img src="{% static 'images/gold-logo.webp' %}" alt=""></a></div>
+            <ul class="centered-list">
+                <ul class="nav-btns">
+                    <li><a class="apply" href=""><i class="fas fa-arrow-up-from-bracket"></i> Apply Now</a></li>
+                    <li><a class="login" href=""><i class="fas fa-right-to-bracket"></i> Login</a></li>
+                </ul>
+                <ul>
+                    <li><div class="flag"><img src="{% static 'images/Flag_of_Nepal.gif' %}" alt="Flag"></div></li>
+                </ul>
+            </ul>
+        </div>
+
+        <div class="navbar" id="navs">
+            <ul>
+                <li {% if page == 'Golden Future Institute' %}class="active"{% endif %}><a href="{% url 'home' %}">Home</a></li>
+                <li {% if page == 'GFI | Languages' %}class="active"{% endif %}><a href="{% url 'languages' %}">Language</a></li>
+                <li {% if page == 'GFI | Tuition' %}class="active"{% endif %}><a href="{% url 'tuition' %}">Tuition</a></li>
+                <li {% if page == 'GFI | Bridge Course' %}class="active"{% endif %}><a href="{% url 'bridgecourse' %}">Bridge Course</a></li>
+                <li {% if page == 'GFI | Career' %}class="active"{% endif %}><a href="{% url 'career' %}">Career</a></li>
+                <li {% if page == 'GFI | Gallery' %}class="active"{% endif %}><a href="{% url 'gallery' %}">Gallery</a></li>
+                <li {% if page == 'GFI | Contact' %}class="active"{% endif %}><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    {% block start %}
+    {% endblock %}
+
+    <!-- Link to Bootstrap JavaScript  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            var owl = $("#main-carousel");
+    
+            owl.owlCarousel({
+                items: 1,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: true,
+            });
+    
+            // Handle manual slide buttons
+            $(".arrow-prev").on("click", function() {
+                owl.trigger("prev.owl.carousel");
+            });
+    
+            $(".arrow-next").on("click", function() {
+                owl.trigger("next.owl.carousel");
+            });
+        });
+    </script>
+    
+    
+    </body>
+    </html>
